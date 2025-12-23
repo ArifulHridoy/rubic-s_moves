@@ -86,6 +86,97 @@ vector<vector<char>>&s3p)
 
 }
 
+void left(vector<vector<char>>&s1,vector<vector<char>>&s1p,
+vector<vector<char>>&s2,
+vector<vector<char>>&s2p,
+vector<vector<char>>&s3,
+vector<vector<char>>&s3p)
+{
+
+  vector<vector<char>>temp;
+    vector<vector<char>>temp1;
+
+    //move upright
+    
+    temp=s1;
+
+    s1=s2p;
+ 
+
+    temp1= s2;
+
+    
+    s2=temp;
+   
+    
+    temp=s1p;
+
+    s1p=temp1;
+  
+
+    temp1= s2p;
+
+    s2p=temp;
+
+}
+
+void right(vector<vector<char>>&s1,vector<vector<char>>&s1p,
+vector<vector<char>>&s2,
+vector<vector<char>>&s2p,
+vector<vector<char>>&s3,
+vector<vector<char>>&s3p)
+{
+    left(s1, s1p, s2, s2p, s3, s3p);
+    left(s1, s1p, s2, s2p, s3, s3p);
+left(s1, s1p, s2, s2p, s3, s3p);
+}
+
+void up(vector<vector<char>>&s1,vector<vector<char>>&s1p,
+vector<vector<char>>&s2,
+vector<vector<char>>&s2p,
+vector<vector<char>>&s3,
+vector<vector<char>>&s3p)
+{
+    vector<vector<char>>temp;
+    vector<vector<char>>temp1;
+
+    //move upright
+    
+    temp=s1;
+
+    s1=s3p;
+   
+
+    temp1=s3;
+
+    
+    s3=temp;
+    s3=temp;
+    
+    temp=s1p;
+
+    s1p=temp1;
+   
+
+    temp1=s3p;
+
+    s3p=temp;
+
+
+
+}
+
+void down(vector<vector<char>>&s1,vector<vector<char>>&s1p,
+vector<vector<char>>&s2,
+vector<vector<char>>&s2p,
+vector<vector<char>>&s3,
+vector<vector<char>>&s3p)
+{
+    up(s1, s1p, s2, s2p, s3, s3p);
+    up(s1, s1p, s2, s2p, s3, s3p);
+    up(s1, s1p, s2, s2p, s3, s3p);
+}
+
 void upright(vector<vector<char>>&s1,vector<vector<char>>&s1p,
 vector<vector<char>>&s2,
 vector<vector<char>>&s2p,
@@ -290,6 +381,11 @@ void solve()
    
     leftdown(s1, s1p, s2, s2p, s3, s3p);
     leftdown(s1, s1p, s2, s2p, s3, s3p);
+print(s1, s1p, s2, s2p, s3, s3p);
+
+up(s1, s1p, s2, s2p, s3, s3p);
+left(s1, s1p, s2, s2p, s3, s3p);
+
 
  print(s1, s1p, s2, s2p, s3, s3p);
 
